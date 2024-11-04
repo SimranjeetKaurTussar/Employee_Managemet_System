@@ -1,4 +1,3 @@
-// Have to create employee management system login page
 import { useState } from "react";
 
 const Login = ({handleLogin}) => {

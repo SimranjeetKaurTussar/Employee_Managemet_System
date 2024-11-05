@@ -1,5 +1,4 @@
-import { useEffect } from 'react'
-// import React, { useEffect } from 'react'
+import React from 'react'
 
 const AuthContext = ({children}) => {
   return (

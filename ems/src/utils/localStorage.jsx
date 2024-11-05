@@ -124,7 +124,7 @@ const employees = [
       {
         title: "Staff training session",
         active: 0,
-        newTask: 0,
+        newTask: 1,
         completed: 1,
         failed: 0,
         description: "Conduct a training session for new staff members.",
@@ -136,8 +136,8 @@ const employees = [
       {
         title: "Product review",
         active: 1,
-        newTask: 0,
-        completed: 0,
+        newTask: 1,
+        completed: 1,
         failed: 0,
         description: "Review feedback on the newly launched product.",
         dueDate: "2024-11-07",
@@ -148,8 +148,8 @@ const employees = [
     ],
     taskCount: {
       active: 2,
-      newTask: 1,
-      completed: 1,
+      newTask: 3,
+      completed: 2,
       failed: 0,
     },
   },
@@ -175,8 +175,8 @@ const employees = [
       {
         title: "Monthly newsletter",
         active: 1,
-        newTask: 0,
-        completed: 0,
+        newTask: 1,
+        completed: 1,
         failed: 0,
         description: "Draft and send out the company newsletter.",
         dueDate: "2024-11-10",
@@ -187,8 +187,8 @@ const employees = [
     ],
     taskCount: {
       active: 2,
-      newTask: 1,
-      completed: 0,
+      newTask: 2,
+      completed: 1,
       failed: 0,
     },
   },

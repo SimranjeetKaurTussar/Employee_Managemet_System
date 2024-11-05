@@ -1,12 +1,37 @@
+import React, { useState } from "react";
 const CreateTask = () => {
+
+  const [taskTitle, setTaskTitle] = useState("");
+  const [dueDate, setDueDate] = useState("")
+  const [assignTo, setAssignTo] = useState("")
+  const [priority, setPriority] = useState("")
+  const [category, setCategory] = useState("")
+  const [taskDescription, setTaskDescription] = useState("")
+
+
+  const submithandler = (e)=>{
+    e.preventDefault()
+    console.table([taskTitle,taskDescription,dueDate,assignTo,priority,category])
+    setTaskTitle('')
+    setDueDate('')
+    setAssignTo('')
+    setPriority('')
+    setCategory('')
+    setTaskDescription('')
+  }
+
   return (
     <div>
       <div className="p-5 bg-[#1c1c1c] mt-5 rounded">
-        <form className="flex flex-wrap w-full items-center justify-between">
+        <form onSubmit={(e)=>{submithandler(e)} } className="flex flex-wrap w-full items-center justify-between">
           <div className="w-1/2">
             <div>
               <h3 className="text-sm text-gray-300 mb-0.5">Task Title</h3>
               <input
+              value={taskTitle}
+              onChange={(e)=>{
+                setTaskTitle(e.target.value)
+              }}
                 required
                 type="text"
                 placeholder="Make a UI design..."
@@ -17,6 +42,10 @@ const CreateTask = () => {
             <div>
               <h3 className="text-sm text-gray-300 mb-0.5">Due Date</h3>
               <input
+              value={dueDate}
+              onChange={(e)=>{
+                setDueDate(e.target.value)
+              }}
                 required
                 type="date"
                 placeholder="DD/MM/YYYY"
@@ -27,6 +56,10 @@ const CreateTask = () => {
             <div>
               <h3 className="text-sm text-gray-300 mb-0.5">Assign To</h3>
               <input
+              value={assignTo}
+              onChange={(e=>{
+                setAssignTo(e.target.value)
+              })}
                 required
                 type="text"
                 placeholder="Employee Name"
@@ -37,6 +70,10 @@ const CreateTask = () => {
             <div>
               <h3 className="text-sm text-gray-300 mb-0.5">Priority</h3>
               <input
+              value={priority}
+              onChange={(e)=>{
+                setPriority(e.target.value)
+              }}
                 required
                 type="text"
                 placeholder="High"
@@ -47,6 +84,10 @@ const CreateTask = () => {
             <div>
               <h3 className="text-sm text-gray-300 mb-0.5">Category</h3>
               <input
+              value={category}
+              onChange={(e)=>{
+                setCategory(e.target.value)
+              }}
                 required
                 type="text"
                 placeholder="Web Development"
@@ -54,19 +95,23 @@ const CreateTask = () => {
               />
             </div>
 
-            <div>
+            {/* <div>
               <h3 className="text-sm text-gray-300 mb-0.5">Attachment</h3>
               <input
-                required
+                
                 className="text-gray-300 text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] cursor-pointer"
                 type="file"
               />
-            </div>
+            </div> */}
           </div>
 
           <div className="w-1/2">
             <h3 className="text-sm text-gray-300 mb-0.5">Description</h3>
             <textarea
+            value={taskDescription}
+            onChange={(e)=>{
+              setTaskDescription(e.target.value)
+            }}
               required
               name="text"
               id=""

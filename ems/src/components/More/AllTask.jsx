@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider";
 
 const AllTask = () => {
-  const authData = useContext(AuthContext);
+  const [userData,setUserData] = useContext(AuthContext);
   return (
     <div
       id="AllTask"
@@ -15,17 +15,15 @@ const AllTask = () => {
             <h5 className="text-xl w-1/5 font-semibold">Completed Task</h5>
             <h5 className="text-xl w-1/5 font-semibold">Failed Task</h5>
           </div>
-      <div className="">
-      {authData.employees.map(function(elem,idx) {
-        return (
-          <div key={idx} className="border-2 border-emerald-400 mb-2 py-2 px-4 flex justify-between rounded">
-            <h2 className=" text-lg w-1/5 font-medium">{elem.name}</h2>
-            <h3 className=" text-lg w-1/5 text-purple-400">{elem.taskCount.newTask}</h3>
-            <h5 className=" text-lg w-1/5 text-blue-400">{elem.taskCount.active}</h5>
-            <h5 className=" text-lg w-1/5 text-green-400">{elem.taskCount.completed}</h5>
-            <h5 className=" text-lg w-1/5 text-red-400">{elem.taskCount.failed}</h5>
+      <div>
+      {userData.map(function(elem,idx) {
+        return <div key={idx} className="border-2 border-emerald-400 mb-2 py-2 px-4 flex justify-between rounded">
+            <h2 className=" text-lg w-1/5 font-medium">{elem.firstName}</h2>
+            <h3 className=" text-lg w-1/5 text-purple-400">{elem.taskCounts.newTask}</h3>
+            <h5 className=" text-lg w-1/5 text-blue-400">{elem.taskCounts.active}</h5>
+            <h5 className=" text-lg w-1/5 text-green-400">{elem.taskCounts.completed}</h5>
+            <h5 className=" text-lg w-1/5 text-red-400">{elem.taskCounts.failed}</h5>
           </div>
-        );
       })}
       </div>
     </div>

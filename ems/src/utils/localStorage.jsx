@@ -1,252 +1,221 @@
-// localStorage.clear()
+
 const employees = [
   {
-    id: 1,
-    name: "Ravi Sharma",
-    email: "ravi.sharma@company.com",
-    password: "123",
-    number: "+91-9876543210",
-    tasks: [
-      {
-        title: "Prepare monthly report",
-        active: 1,
-        newTask: 1,
-        completed: 0,
-        failed: 0,
-        description: "Compile the monthly sales data and summarize findings.",
-        dueDate: "2024-11-10",
-        assignedTo: "Ravi Sharma",
-        priority: "High",
-        category: "Reporting",
+      "id": 1,
+      "firstName": "Arjun",
+      "email": "e@e.com",
+      "password": "123",
+      "taskCounts": {
+          "active": 2,
+          "newTask": 1,
+          "completed": 1,
+          "failed": 0
       },
-      {
-        title: "Team meeting preparation",
-        active: 0,
-        newTask: 0,
-        completed: 1,
-        failed: 0,
-        description: "Prepare slides for the upcoming team meeting.",
-        dueDate: "2024-10-25",
-        assignedTo: "Ravi Sharma",
-        priority: "Medium",
-        category: "Meetings",
-      },
-      {
-        title: "Client follow-up",
-        active: 1,
-        newTask: 0,
-        completed: 0,
-        failed: 0,
-        description: "Follow up with clients on recent project updates.",
-        dueDate: "2024-11-05",
-        assignedTo: "Ravi Sharma",
-        priority: "High",
-        category: "Client Relations",
-      },
-    ],
-    taskCount: {
-      active: 2,
-      newTask: 1,
-      completed: 1,
-      failed: 0,
-    },
+      "tasks": [
+          {
+              "active": true,
+              "newTask": true,
+              "completed": false,
+              "failed": false,
+              "taskTitle": "Update website",
+              "taskDescription": "Revamp the homepage design",
+              "taskDate": "2024-10-12",
+              "category": "Design" 
+          },
+          {
+              "active": false,
+              "newTask": false,
+              "completed": true,
+              "failed": false,
+              "taskTitle": "Client meeting",
+              "taskDescription": "Discuss project requirements",
+              "taskDate": "2024-10-10",
+              "category": "Meeting"
+          },
+          {
+              "active": true,
+              "newTask": false,
+              "completed": false,
+              "failed": false,
+              "taskTitle": "Fix bugs",
+              "taskDescription": "Resolve bugs reported in issue tracker",
+              "taskDate": "2024-10-14",
+              "category": "Development"
+          }
+      ]
   },
   {
-    id: 2,
-    name: "Aarti Verma",
-    email: "aarti.verma@company.com",
-    password: "123",
-    number: "+91-9876543211",
-    tasks: [
-      {
-        title: "Update software",
-        active: 0,
-        newTask: 0,
-        completed: 1,
-        failed: 0,
-        description: "Install the latest updates on all team devices.",
-        dueDate: "2024-10-20",
-        assignedTo: "Aarti Verma",
-        priority: "Low",
-        category: "Maintenance",
+      "id": 2,
+      "firstName": "Sneha",
+      "email": "employee2@example.com",
+      "password": "123",
+      "taskCounts": {
+          "active": 1,
+          "newTask": 0,
+          "completed": 1,
+          "failed": 0
       },
-      {
-        title: "Create project proposal",
-        active: 1,
-        newTask: 1,
-        completed: 0,
-        failed: 0,
-        description: "Draft a proposal for the upcoming client project.",
-        dueDate: "2024-11-12",
-        assignedTo: "Aarti Verma",
-        priority: "High",
-        category: "Planning",
-      },
-      {
-        title: "Research competitors",
-        active: 1,
-        newTask: 0,
-        completed: 0,
-        failed: 0,
-        description: "Conduct research on competing companies and products.",
-        dueDate: "2024-11-08",
-        assignedTo: "Aarti Verma",
-        priority: "Medium",
-        category: "Research",
-      },
-    ],
-    taskCount: {
-      active: 2,
-      newTask: 1,
-      completed: 1,
-      failed: 0,
-    },
+      "tasks": [
+          {
+              "active": true,
+              "newTask": false,
+              "completed": false,
+              "failed": false,
+              "taskTitle": "Database optimization",
+              "taskDescription": "Optimize queries for better performance",
+              "taskDate": "2024-10-11",
+              "category": "Database"
+          },
+          {
+              "active": false,
+              "newTask": false,
+              "completed": true,
+              "failed": false,
+              "taskTitle": "Design new feature",
+              "taskDescription": "Create mockups for the new feature",
+              "taskDate": "2024-10-09",
+              "category": "Design"
+          }
+      ]
   },
   {
-    id: 3,
-    name: "Priya Singh",
-    email: "priya.singh@company.com",
-    password: "123",
-    number: "+91-9876543212",
-    tasks: [
-      {
-        title: "Inventory audit",
-        active: 1,
-        newTask: 1,
-        completed: 0,
-        failed: 0,
-        description: "Check and audit the current inventory levels.",
-        dueDate: "2024-11-15",
-        assignedTo: "Priya Singh",
-        priority: "High",
-        category: "Audit",
+      "id": 3,
+      "firstName": "Ravi",
+      "email": "employee3@example.com",
+      "password": "123",
+      "taskCounts": {
+          "active": 2,
+          "newTask": 1,
+          "completed": 1,
+          "failed": 0
       },
-      {
-        title: "Staff training session",
-        active: 0,
-        newTask: 1,
-        completed: 1,
-        failed: 0,
-        description: "Conduct a training session for new staff members.",
-        dueDate: "2024-10-30",
-        assignedTo: "Priya Singh",
-        priority: "Medium",
-        category: "Training",
-      },
-      {
-        title: "Product review",
-        active: 1,
-        newTask: 1,
-        completed: 1,
-        failed: 0,
-        description: "Review feedback on the newly launched product.",
-        dueDate: "2024-11-07",
-        assignedTo: "Priya Singh",
-        priority: "High",
-        category: "Product Review",
-      },
-    ],
-    taskCount: {
-      active: 2,
-      newTask: 3,
-      completed: 2,
-      failed: 0,
-    },
+      "tasks": [
+          {
+              "active": true,
+              "newTask": true,
+              "completed": false,
+              "failed": false,
+              "taskTitle": "Prepare presentation",
+              "taskDescription": "Prepare slides for upcoming client presentation",
+              "taskDate": "2024-10-13",
+              "category": "Presentation"
+          },
+          {
+              "active": true,
+              "newTask": false,
+              "completed": false,
+              "failed": false,
+              "taskTitle": "Code review",
+              "taskDescription": "Review the codebase for optimization",
+              "taskDate": "2024-10-12",
+              "category": "Development"
+          },
+          {
+              "active": false,
+              "newTask": false,
+              "completed": true,
+              "failed": false,
+              "taskTitle": "Testing",
+              "taskDescription": "Test the latest build for bugs",
+              "taskDate": "2024-10-08",
+              "category": "QA"
+          }
+      ]
   },
   {
-    id: 4,
-    name: "Arjun Nair",
-    email: "arjun.nair@company.com",
-    password: "123",
-    number: "+91-9876543213",
-    tasks: [
-      {
-        title: "Website update",
-        active: 1,
-        newTask: 1,
-        completed: 0,
-        failed: 0,
-        description: "Update website content and improve UX design.",
-        dueDate: "2024-11-20",
-        assignedTo: "Arjun Nair",
-        priority: "High",
-        category: "Website Management",
+      "id": 4,
+      "firstName": "Priya",
+      "email": "employee4@example.com",
+      "password": "123",
+      "taskCounts": {
+          "active": 2,
+          "newTask": 1,
+          "completed": 0,
+          "failed": 0
       },
-      {
-        title: "Monthly newsletter",
-        active: 1,
-        newTask: 1,
-        completed: 1,
-        failed: 0,
-        description: "Draft and send out the company newsletter.",
-        dueDate: "2024-11-10",
-        assignedTo: "Arjun Nair",
-        priority: "Medium",
-        category: "Communications",
-      },
-    ],
-    taskCount: {
-      active: 2,
-      newTask: 2,
-      completed: 1,
-      failed: 0,
-    },
+      "tasks": [
+          {
+              "active": true,
+              "newTask": true,
+              "completed": false,
+              "failed": false,
+              "taskTitle": "Write documentation",
+              "taskDescription": "Update the project documentation",
+              "taskDate": "2024-10-13",
+              "category": "Documentation"
+          },
+          {
+              "active": true,
+              "newTask": false,
+              "completed": false,
+              "failed": false,
+              "taskTitle": "Set up CI/CD",
+              "taskDescription": "Implement continuous integration pipeline",
+              "taskDate": "2024-10-11",
+              "category": "DevOps"
+          }
+      ]
   },
   {
-    id: 5,
-    name: "Meera Kapoor",
-    email: "meera.kapoor@company.com",
-    password: "123",
-    number: "+91-9876543214",
-    tasks: [
-      {
-        title: "Customer feedback analysis",
-        active: 1,
-        newTask: 1,
-        completed: 0,
-        failed: 0,
-        description: "Analyze and summarize recent customer feedback.",
-        dueDate: "2024-11-12",
-        assignedTo: "Meera Kapoor",
-        priority: "High",
-        category: "Customer Service",
+      "id": 5,
+      "firstName": "Karan",
+      "email": "employee5@example.com",
+      "password": "123",
+      "taskCounts": {
+          "active": 2,
+          "newTask": 1,
+          "completed": 1,
+          "failed": 0
       },
-      {
-        title: "Social media campaign",
-        active: 1,
-        newTask: 0,
-        completed: 0,
-        failed: 0,
-        description: "Plan and execute the next social media campaign.",
-        dueDate: "2024-11-18",
-        assignedTo: "Meera Kapoor",
-        priority: "Medium",
-        category: "Marketing",
-      },
-    ],
-    taskCount: {
-      active: 2,
-      newTask: 1,
-      completed: 0,
-      failed: 0,
-    },
-  },
+      "tasks": [
+          {
+              "active": true,
+              "newTask": true,
+              "completed": false,
+              "failed": false,
+              "taskTitle": "UI redesign",
+              "taskDescription": "Redesign the user interface for better UX",
+              "taskDate": "2024-10-14",
+              "category": "Design"
+          },
+          {
+              "active": false,
+              "newTask": false,
+              "completed": true,
+              "failed": false,
+              "taskTitle": "Deploy new build",
+              "taskDescription": "Deploy the latest build to production",
+              "taskDate": "2024-10-09",
+              "category": "DevOps"
+          },
+          {
+              "active": true,
+              "newTask": false,
+              "completed": false,
+              "failed": false,
+              "taskTitle": "Client feedback",
+              "taskDescription": "Gather feedback from clients after product launch",
+              "taskDate": "2024-10-12",
+              "category": "Support"
+          }
+      ]
+  }
 ];
 
-const admin = {
-  id: 101,
-  email: "admin@company.com",
-  password: "123",
-};
 
-export const setLocalStorage = () => {
-  localStorage.setItem("employees", JSON.stringify(employees));
-  localStorage.setItem("admin", JSON.stringify(admin));
-};
+const admin = [{
+  "id": 1,
+  "email": "admin@example.com",
+  "password": "123"
+}];
 
-export const getLocalStorage = () => {
-  const employees = JSON.parse(localStorage.getItem("employees"));
-  const admin = JSON.parse(localStorage.getItem("admin"));
-  return { employees, admin };
-};
+export const setLocalStorage = ()=>{
+  localStorage.setItem('employees',JSON.stringify(employees))
+  localStorage.setItem('admin',JSON.stringify(admin))
+}
+export const getLocalStorage = ()=>{
+  const employees = JSON.parse(localStorage.getItem('employees'))
+  const admin = JSON.parse(localStorage.getItem('admin'))
 
+  return {employees,admin}
+}
